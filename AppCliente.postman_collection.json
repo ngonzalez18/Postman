@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "8b17eea1-7ecd-4a79-a39f-0dc0a66ae8d6",
+		"name": "AppCliente",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "account/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"  pm.globals.set(\"companytest\", pm.response.json().tenantsAccounts[0].companies[0].companyId);\r",
+							"      console.log(pm.globals.get(\"companytest\"));\r",
+							"\r",
+							" pm.globals.set(\"customerTest\", pm.response.json().tenantsAccounts[0].customerId);\r",
+							"      console.log(pm.globals.get(\"customerTest\"));\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "9a475d30a449456b9f84759164d33a6e",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Api-Key",
+						"value": "1wbirkwHUf9KSCJ48wLa48Mx5QaOMr2BNNXjWRKBHLy4dTXsfDKwDsH6RNw28EeU0x6uQLpZOSY0SuKaLa5ZlYiuKoFtmHU1yBF/CDxtIj2pCbtOsBrJP27vp51W6bE9ahpdSy4pxa6kjTDhakvjhJsJj7bKavneC0NPhjyzd1iCWdz97xNa8tClVJE6UBFWWCLz3ZEgKPjJSjB6V5wG7OaEkEqBK8GDtsXhc78hbel/jAThty94OZ5s7nWSapdunlzGPbAyz4bd+ONDQIxFXqe9p1YdL2u64yLaJC5KoWJToxHp9Ony/TwoceS2Y9tzwlorHbKDmpWER6NmjWgAKA==",
+						"type": "text"
+					},
+					{
+						"key": "postman-api-key",
+						"value": "{{postman-api-key}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"username\": \"prueba01.hnl@gmail.com\",\r\n\t\"password\": \"pruebaHNL01\",\r\n\t\"tenantId\": {{tenantId}}\r\n}"
+				},
+				"url": {
+					"raw": "{{mdl17}}/prod/account/login",
+					"host": [
+						"{{mdl17}}"
+					],
+					"path": [
+						"prod",
+						"account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customerlist/search",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "{{subs_key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Api-Key",
+						"value": "{{api-key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"companyId\":\"{{companytest}}\",\r\n    \"customerId\":\"{{customerTest}}\",\r\n    \"status\":true\r\n    }"
+				},
+				"url": {
+					"raw": "{{mdl17}}/qa/customerlist/search",
+					"host": [
+						"{{mdl17}}"
+					],
+					"path": [
+						"qa",
+						"customerlist",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"",
+					"",
+					"pm.test(\"Response is less than 20000ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(20000)",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "companytest",
+			"value": ""
+		},
+		{
+			"key": "customerTest",
+			"value": ""
+		},
+		{
+			"key": "testStatus",
+			"value": ""
+		}
+	]
+}

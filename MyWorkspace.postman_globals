@@ -1,0 +1,69 @@
+{
+	"id": "552cd522-3a27-44c5-8f13-5d6c7eebf67e",
+	"values": [
+		{
+			"key": "user_name",
+			"value": "loginnovey4@gmail.com",
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": "0101!Abcd",
+			"enabled": true
+		},
+		{
+			"key": "tenantId",
+			"value": "2",
+			"enabled": true
+		},
+		{
+			"key": "pruebauser",
+			"value": "loginnovey4@gmail.com",
+			"enabled": true
+		},
+		{
+			"key": "pruebapassword",
+			"value": "0101!Abcd",
+			"enabled": true
+		},
+		{
+			"key": "pruebatenant",
+			"value": "2",
+			"enabled": true
+		},
+		{
+			"key": "mdl17",
+			"value": "https://aludra-api-management.azure-api.net/mdl17",
+			"enabled": true
+		},
+		{
+			"key": "qa",
+			"value": "qa",
+			"enabled": true
+		},
+		{
+			"key": "postman-api-key",
+			"value": "PMAK-6079912f6c1f7e0035d3977d-ad3c1e04a333504825db902cb55d453d8f",
+			"enabled": false
+		},
+		{
+			"key": "companytest",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "customerTest",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "dProtAutTEST",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"name": "My Workspace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2021-04-23T13:42:12.550Z",
+	"_postman_exported_using": "Postman/8.2.3"
+}
